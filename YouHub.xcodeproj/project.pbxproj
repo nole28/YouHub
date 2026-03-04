@@ -71,8 +71,6 @@
 		B20C31DA2F55C72300137709 = {
 			isa = PBXGroup;
 			children = (
-				B20C32042F55CADB00137709 /* VideoStore.swift */,
-				B20C32022F55C8BB00137709 /* SearchViewModel.swift */,
 				B20C31E52F55C72300137709 /* YouHub */,
 				B20C31E42F55C72300137709 /* Products */,
 			);
@@ -89,24 +87,14 @@
 		B20C31E52F55C72300137709 /* YouHub */ = {
 			isa = PBXGroup;
 			children = (
-				B20C31E62F55C72300137709 /* YouHubApp.swift */,
-				B20C320C2F55CB9300137709 /* ShortVideo.swift */,
-				B20C32182F55CCB900137709 /* User.swift */,
-				B20C32122F55CC1600137709 /* Channel.swift */,
 				B20C32142F55CC6700137709 /* View.swift */,
-				B20C31FE2F55C89500137709 /* Video.swift */,
-				B20C32062F55CB1600137709 /* VideoThumbnail.swift */,
+				B20C31E62F55C72300137709 /* YouHubApp.swift */,
 				B20C31EA2F55C72400137709 /* Assets.xcassets */,
 				B20C31EC2F55C72400137709 /* Preview Content */,
-				B20C31F42F55C80F00137709 /* ProfileView.swift */,
-				B20C31F62F55C81D00137709 /* UploadView.swift */,
-				B20C32082F55CB3200137709 /* VideoPlayerView.swift */,
-				B20C320A2F55CB6100137709 /* VideoDetail.swift */,
-				B20C31F82F55C82A00137709 /* ShortsView.swift */,
-				B20C31FA2F55C83400137709 /* HomeView.swift */,
-				B20C31FC2F55C84200137709 /* SubscriptionView.swift */,
-				B20C320E2F55CBC000137709 /* SearchBar.swift */,
-				B20C32102F55CBF000137709 /* FirstUploadCelebration .swift */,
+				B20C321A2F58A0BB00137709 /* Models */,
+				B20C321D2F58B07E00137709 /* Services */,
+				B20C321C2F58A0D100137709 /* ViewModels */,
+				B20C321B2F58A0C800137709 /* Views */,
 			);
 			path = YouHub;
 			sourceTree = "<group>";
@@ -114,11 +102,63 @@
 		B20C31EC2F55C72400137709 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				B20C31E82F55C72300137709 /* ContentView.swift */,
 				B20C32162F55CCA900137709 /* UserSession.swift */,
+				B20C31E82F55C72300137709 /* ContentView.swift */,
 				B20C31ED2F55C72400137709 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		B20C321A2F58A0BB00137709 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B20C32182F55CCB900137709 /* User.swift */,
+				B20C32122F55CC1600137709 /* Channel.swift */,
+				B20C31FE2F55C89500137709 /* Video.swift */,
+				B20C320C2F55CB9300137709 /* ShortVideo.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B20C321B2F58A0C800137709 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B20C31FA2F55C83400137709 /* HomeView.swift */,
+				B20C31F42F55C80F00137709 /* ProfileView.swift */,
+				B20C31F62F55C81D00137709 /* UploadView.swift */,
+				B20C32082F55CB3200137709 /* VideoPlayerView.swift */,
+				B20C320A2F55CB6100137709 /* VideoDetail.swift */,
+				B20C31F82F55C82A00137709 /* ShortsView.swift */,
+				B20C31FC2F55C84200137709 /* SubscriptionView.swift */,
+				B20C320E2F55CBC000137709 /* SearchBar.swift */,
+				B20C32062F55CB1600137709 /* VideoThumbnail.swift */,
+				B20C32102F55CBF000137709 /* FirstUploadCelebration .swift */,
+				B20C321E2F58B3AF00137709 /* Extensions */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B20C321C2F58A0D100137709 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				B20C32022F55C8BB00137709 /* SearchViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		B20C321D2F58B07E00137709 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B20C32042F55CADB00137709 /* VideoStore.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		B20C321E2F58B3AF00137709 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
