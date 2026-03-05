@@ -22,17 +22,28 @@ struct ProfileView: View {
                 if let avatar = session.user.avatarURL,
                    let url = URL(string: avatar) {
                     AsyncImage(url: url) { image in
-                        image.resizable().scaledToFill()
-                    } placeholder: {
-                        Circle().fill(Color.gray)
+                        switch image {
+                        case .success(let image):
+                            image
+                                .resizable()
+                                .scaledToFill()
+                        default:
+                            Circle().fill(Color.gray)
+                            
+                        }
                     }
                     .frame(width: 80, height: 80)
                     .clipShape(Circle())
                 } else {
                     Circle()
-                        .fill(Color.gray)
+                        .fill(Color.gray.opacity(0.4))
                         .frame(width: 80, height: 80)
-                }
+                        .overlay(
+                            Image(systemName: "person.fill")
+                                .font(.largeTitle)
+                                .foregroundColor(.white)
+                )
+            }
 
                 Text(session.user.username)
                     .font(.title2)
@@ -46,19 +57,25 @@ struct ProfileView: View {
                 VStack(alignment: .leading, spacing: 12) {
                     Text("My clips")
                         .font(.headline)
+                        .frame(maxWidth: .infinity, alignment: .leading)
 
-                    LazyVStack(alignment: .leading, spacing: 12) {
-                        if userVideos.isEmpty {
-                            Text("You haven't uploaded any videos yet.")
+                    if userVideos.isEmpty {
+                        VStack(spacing: 12) {
+                            Image(systemName: "video.slash")
+                                .font(.largeTitle)
                                 .foregroundStyle(.secondary)
-                                .padding(.top, 20)
-                        } else {
+                            Text("no videos yet :/")
+                                .foregroundStyle(.secondary)
+                        }
+                        .frame(maxWidth: .infinity)
+                        .padding(.top, 20)
+                    } else {
+                        LazyVStack(spacing: 12) {
                             ForEach(userVideos) { video in
                                 NavigationLink {
                                     VideoDetail(video: video)
                                 } label: {
                                     VideoThumbnail(video: video)
-                                        .environmentObject(store)
                                 }
                                 .buttonStyle(.plain)
                             }
@@ -75,4 +92,6 @@ struct ProfileView: View {
 
 #Preview {
     ProfileView()
+        .environmentObject(UserSession())
+        .environmentObject(VideoStore())
 }

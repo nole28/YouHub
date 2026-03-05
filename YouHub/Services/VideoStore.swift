@@ -29,4 +29,12 @@ final class VideoStore: ObservableObject {
     private func updateShorts() {
         shorts = videos.filter { $0.duration <= 60 }
     }
+    
+    var homeFeed: [Video] {
+        videos.sorted { $0.uploadDate > $1.uploadDate }
+    }
+    
+    func videos(for channelID: UUID) -> [Video] {
+        videos.filter { $0.channelID == channelID }
+    }
 }

@@ -9,7 +9,7 @@
 
 import SwiftUI
 
-struct HomeViews: View {
+struct HomeView: View {
     @ObservedObject var viewModel: SearchViewModel
 
     var body: some View {

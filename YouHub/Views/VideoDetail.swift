@@ -41,7 +41,7 @@ struct VideoDetail: View {
                         Text(channel.name)
                             .font(.subheadline)
                             .bold()
-                        Text("\(channel.subscribersCount / 1000)K subscribers!")
+                        Text("\(channel.subscribersCount / 1000)K subscribers")
                             .font(.caption)
                             .foregroundStyle(.secondary)
                     }
